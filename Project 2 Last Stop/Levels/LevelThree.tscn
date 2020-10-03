@@ -1,0 +1,172 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ScrollingBG.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PlayerGround.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TimeBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GlobalController.gd" type="Script" id=7]
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Left Wall.png" type="Texture" id=8]
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Left Door.png" type="Texture" id=9]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.038, 283.576 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 484.874, 10 )
+
+[node name="TutorialLevel" type="Node2D"]
+
+[node name="PlayerGround" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.332, 0.632 )
+
+[node name="PlayerGround2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 483.993, -68.6645 )
+
+[node name="PlayerGround3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 473.387, 104.577 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="PlayerGround4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 746.579, 421.92 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="TimeBoxController" type="Node2D" parent="."]
+
+[node name="TimeBox1" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 403.867, 244.426 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox2" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 477.604, 173.739 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox3" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 403.867, 203.926 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox4" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 403.867, 159.926 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox5" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 403.867, 118.426 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox6" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 405.058, 77.9264 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox7" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 350.713, 242.297 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox8" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 350.713, 201.761 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox9" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 791.241, 348.84 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox10" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 844.981, 440.056 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="ScrollingBG" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0.696533, 0.793701 )
+
+[node name="Train Cargo Car Left Wall2" type="Sprite" parent="ScrollingBG"]
+scale = Vector2( 0.999999, 0.999999 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Train Cargo Car Left Door" type="Sprite" parent="ScrollingBG"]
+position = Vector2( 0.629974, 0 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ScrollingBG2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 270 )
+
+[node name="Train Cargo Car Left Wall" type="Sprite" parent="ScrollingBG2"]
+scale = Vector2( 0.999999, 0.999999 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="PlayerGround2" parent="ScrollingBG2" instance=ExtResource( 2 )]
+
+[node name="Train Cargo Car Left Door2" type="Sprite" parent="ScrollingBG2"]
+texture = ExtResource( 9 )
+centered = false
+
+[node name="LeftBound" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBound"]
+position = Vector2( 12.7279, 262.773 )
+shape = SubResource( 1 )
+
+[node name="Top bound" type="StaticBody2D" parent="."]
+position = Vector2( 210.422, -137.056 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top bound"]
+position = Vector2( 286.027, 113.393 )
+shape = SubResource( 2 )
+
+[node name="RightBound" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBound"]
+position = Vector2( 970.151, 279.273 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 173.48, 225.611 )
+movementSpeed = 150.0
+gravity = 500.0
+jumpForce = 350.0
+push = 10
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( -1.56073, 29.3627 )
+scale = Vector2( 0.999999, 0.999999 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 580
+smoothing_enabled = true
+smoothing_speed = 8.0
+
+[node name="Portal" parent="." instance=ExtResource( 10 )]
+position = Vector2( 23.8559, 540.16 )
+scale = Vector2( 0.999999, 0.999999 )

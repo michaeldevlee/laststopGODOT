@@ -1,0 +1,227 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://ScrollingBG.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PlayerGround.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TimeBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Congratulations!.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MovementUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GlobalController.gd" type="Script" id=7]
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Left Wall.png" type="Texture" id=8]
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Left Door.png" type="Texture" id=9]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Enemies/EnemyHit.tscn" type="PackedScene" id=11]
+[ext_resource path="res://OutofBounds.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.038, 283.576 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 289.068, 10 )
+
+[node name="TutorialLevel" type="Node2D"]
+
+[node name="PlayerGround" parent="." instance=ExtResource( 2 )]
+position = Vector2( -480, 0.632 )
+
+[node name="PlayerGround2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 191.538, 197.7 )
+
+[node name="PlayerGround3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 424.623, 90.7178 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="PlayerGround4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 94.6391, 142.537 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="TimeBoxController" type="Node2D" parent="."]
+position = Vector2( 327.411, -7.96036 )
+
+[node name="TimeBox5" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 228.738, 205.991 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox6" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 229.299, 164.231 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox7" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 231.021, 122.604 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox9" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 176.273, 183.637 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="TimeBox10" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 4 )]
+position = Vector2( 285.73, 179.602 )
+mode = 2
+script = ExtResource( 7 )
+
+[node name="ScrollingBG" parent="." instance=ExtResource( 1 )]
+position = Vector2( -480, 0 )
+
+[node name="Train Cargo Car Left Wall2" type="Sprite" parent="ScrollingBG"]
+scale = Vector2( 0.999999, 0.999999 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Train Cargo Car Left Door" type="Sprite" parent="ScrollingBG"]
+position = Vector2( 0.629974, 0 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Train Cargo Car Left Door2" type="Sprite" parent="ScrollingBG"]
+position = Vector2( 672.63, 188 )
+texture = ExtResource( 9 )
+centered = false
+flip_h = true
+
+[node name="ScrollingBG2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -480, 270 )
+
+[node name="Train Cargo Car Left Wall" type="Sprite" parent="ScrollingBG2"]
+position = Vector2( 0, 1.33484 )
+scale = Vector2( 0.999999, 0.999999 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="PlayerGround2" parent="ScrollingBG2" instance=ExtResource( 2 )]
+position = Vector2( 0, 1.33484 )
+
+[node name="LeftBound" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBound"]
+position = Vector2( -464.603, 261.438 )
+shape = SubResource( 1 )
+
+[node name="Top bound" type="StaticBody2D" parent="."]
+position = Vector2( 210.422, -137.056 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top bound"]
+position = Vector2( -15.1328, 114.891 )
+shape = SubResource( 2 )
+
+[node name="RightBound" type="StaticBody2D" parent="."]
+position = Vector2( -568.932, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBound"]
+position = Vector2( 1516.04, 279.273 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -355.085, 220.906 )
+movementSpeed = 150.0
+gravity = 500.0
+jumpForce = 350.0
+push = 10
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 94.4382, -58.1216 )
+scale = Vector2( 0.999999, 0.999999 )
+current = true
+limit_left = -480
+limit_top = 0
+limit_right = 960
+limit_bottom = 960
+smoothing_enabled = true
+smoothing_speed = 8.0
+
+[node name="Portal" parent="." instance=ExtResource( 10 )]
+position = Vector2( 637.624, 426.944 )
+scale = Vector2( 0.999999, 0.999999 )
+next_Scene = ExtResource( 5 )
+
+[node name="Time Flyer" parent="." instance=ExtResource( 11 )]
+position = Vector2( -252.83, 239.882 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Beginning" parent="Time Flyer" index="1"]
+position = Vector2( -260.031, 10.8309 )
+
+[node name="AnimatedSprite" parent="Time Flyer" index="2"]
+frame = 11
+
+[node name="Time Flyer2" parent="." instance=ExtResource( 11 )]
+position = Vector2( -251.708, 185.281 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Beginning" parent="Time Flyer2" index="1"]
+position = Vector2( -261.153, 118.587 )
+
+[node name="AnimatedSprite" parent="Time Flyer2" index="2"]
+frame = 10
+
+[node name="Time Flyer3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -251.708, 77.5581 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Beginning" parent="Time Flyer3" index="1"]
+position = Vector2( -260.031, 331.855 )
+
+[node name="AnimatedSprite" parent="Time Flyer3" index="2"]
+frame = 9
+
+[node name="Time Flyer4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 426.266, 428.572 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Beginning" parent="Time Flyer4" index="1"]
+position = Vector2( -1617.76, -366.804 )
+
+[node name="AnimatedSprite" parent="Time Flyer4" index="2"]
+frame = 9
+
+[node name="Time Flyer5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 558.602, 362.698 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CollisionShape2D" parent="Time Flyer5" index="0"]
+position = Vector2( 0.959607, 13.5991 )
+
+[node name="Beginning" parent="Time Flyer5" index="1"]
+position = Vector2( -1884.33, -237.875 )
+
+[node name="AnimatedSprite" parent="Time Flyer5" index="2"]
+position = Vector2( 0.845703, 60.3431 )
+frame = 9
+
+[node name="OutofBounds" parent="." instance=ExtResource( 12 )]
+position = Vector2( 289.935, 598.851 )
+
+[node name="Beginning" parent="OutofBounds" index="1"]
+position = Vector2( -671.627, -354.956 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_priority = 100
+
+[node name="MovementUI" parent="CanvasLayer" instance=ExtResource( 6 )]
+position = Vector2( 0, 40 )
+scale = Vector2( 0.999999, 0.999999 )
+
+[editable path="Time Flyer"]
+
+[editable path="Time Flyer2"]
+
+[editable path="Time Flyer3"]
+
+[editable path="Time Flyer4"]
+
+[editable path="Time Flyer5"]
+
+[editable path="OutofBounds"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+onready var backToStartPos = get_node(\"Beginning\").get_global_position()
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+func _on_TeleBack_body_entered(body):
+	print(body.set_position(backToStartPos))
+	
+	#if(body.is_in_group(\"Player\")):
+		#body.set_position(backToStartPos)
+		
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	print(backToStartPos)
+	pass # Replace with function body.
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+#	pass
+
+
+
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 687.232, 26.3843 )
+
+[node name="Time Flyer" type="Area2D" groups=[
+"Teleback",
+]]
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.210461, -1.38394 )
+shape = SubResource( 2 )
+
+[node name="Beginning" type="Node2D" parent="."]
+position = Vector2( -20.9462, -0.393725 )
+[connection signal="body_entered" from="." to="." method="_on_TeleBack_body_entered"]

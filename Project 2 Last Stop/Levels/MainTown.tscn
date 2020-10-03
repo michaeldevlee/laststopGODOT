@@ -1,0 +1,136 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Left Door.png" type="Texture" id=1]
+[ext_resource path="res://MovementUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Left Wall.png" type="Texture" id=3]
+[ext_resource path="res://GlobalController.gd" type="Script" id=4]
+[ext_resource path="res://Levels/LevelOne.tscn" type="PackedScene" id=5]
+[ext_resource path="res://TimeBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ScrollingBG.tscn" type="PackedScene" id=9]
+[ext_resource path="res://PlayerGround.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.038, 140.295 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 234.839, 10 )
+
+[node name="TutorialLevel" type="Node2D"]
+
+[node name="Portal" parent="." instance=ExtResource( 8 )]
+position = Vector2( 450.249, 266.519 )
+next_Scene = ExtResource( 5 )
+
+[node name="PlayerGround" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0.332, 0.632 )
+
+[node name="Right Wall" type="Sprite" parent="PlayerGround"]
+texture = ExtResource( 3 )
+centered = false
+flip_h = true
+
+[node name="Left Wall" type="Sprite" parent="PlayerGround"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Right Door" type="Sprite" parent="PlayerGround"]
+texture = ExtResource( 1 )
+centered = false
+flip_h = true
+
+[node name="Left Door" type="Sprite" parent="PlayerGround"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="TimeBoxController" type="Node2D" parent="."]
+
+[node name="TimeBox1" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 7 )]
+position = Vector2( 338.981, 247.576 )
+mode = 2
+script = ExtResource( 4 )
+
+[node name="TimeBox2" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 7 )]
+position = Vector2( 166.275, 248.473 )
+mode = 2
+script = ExtResource( 4 )
+
+[node name="TimeBox3" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 7 )]
+position = Vector2( 338.981, 207.076 )
+mode = 2
+script = ExtResource( 4 )
+
+[node name="TimeBox4" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 7 )]
+position = Vector2( 338.981, 163.076 )
+mode = 2
+script = ExtResource( 4 )
+
+[node name="TimeBox5" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 7 )]
+position = Vector2( 338.981, 121.576 )
+mode = 2
+script = ExtResource( 4 )
+
+[node name="TimeBox6" parent="TimeBoxController" groups=[
+"bodies",
+] instance=ExtResource( 7 )]
+position = Vector2( 340.172, 81.0762 )
+mode = 2
+script = ExtResource( 4 )
+
+[node name="ScrollingBG" parent="." instance=ExtResource( 9 )]
+position = Vector2( 0.793701, 0 )
+
+[node name="LeftBound" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBound"]
+position = Vector2( 12.7279, 127.986 )
+shape = SubResource( 1 )
+
+[node name="Top bound" type="StaticBody2D" parent="."]
+position = Vector2( 210.422, -137.056 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top bound"]
+position = Vector2( 26.4583, 113.393 )
+shape = SubResource( 2 )
+
+[node name="RightBound" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBound"]
+position = Vector2( 469.519, 128.693 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 11 )]
+position = Vector2( 132.518, 161.498 )
+movementSpeed = 150.0
+gravity = 500.0
+jumpForce = 350.0
+push = 10
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 240, 145.198 )
+scale = Vector2( 0.999999, 0.999999 )
+current = true
+
+[node name="MovementUI" parent="Camera2D" instance=ExtResource( 2 )]
+position = Vector2( -240, -120 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 68.5894
+margin_top = 62.2254
+margin_right = 308.589
+margin_bottom = 92.2254
+text = "		Tutorial: Press R to Rewind!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

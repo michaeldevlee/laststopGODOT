@@ -1,0 +1,6 @@
+C:\Users\Pencil\Desktop\Godot\Projects\Project 2\.mono\temp\bin\Debug\Project 2.dll
+C:\Users\Pencil\Desktop\Godot\Projects\Project 2\.mono\temp\bin\Debug\Project 2.pdb
+C:\Users\Pencil\Desktop\Godot\Projects\Project 2\.mono\temp\obj\Debug\Project 2.csprojAssemblyReference.cache
+C:\Users\Pencil\Desktop\Godot\Projects\Project 2\.mono\temp\obj\Debug\Project 2.csproj.CoreCompileInputs.cache
+C:\Users\Pencil\Desktop\Godot\Projects\Project 2\.mono\temp\obj\Debug\Project 2.dll
+C:\Users\Pencil\Desktop\Godot\Projects\Project 2\.mono\temp\obj\Debug\Project 2.pdb

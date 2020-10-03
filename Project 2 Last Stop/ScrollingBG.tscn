@@ -1,0 +1,223 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Wall.png" type="Texture" id=1]
+[ext_resource path="res://ParallaxLayer1.gd" type="Script" id=3]
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Front Pipes.png" type="Texture" id=4]
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Clouds in Back.png" type="Texture" id=5]
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Clouds in front.png" type="Texture" id=7]
+
+[node name="ScrollingBG" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2( -960, 0 )
+transform = Transform2D( 1, 0, 0, 1, -960, 0 )
+scroll_base_scale = Vector2( 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+script = ExtResource( 3 )
+offSet = 10
+
+[node name="Wall" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 960, 270 )
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+offset = Vector2( -960, 0 )
+transform = Transform2D( 1, 0, 0, 1, -960, 0 )
+scroll_base_scale = Vector2( 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 100
+
+[node name="Train Cargo Car Clouds in Back" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+offset = Vector2( -960, 0 )
+transform = Transform2D( 1, 0, 0, 1, -960, 0 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground3"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 200
+
+[node name="Train Cargo Car Front Pipes" type="Sprite" parent="ParallaxBackground3/ParallaxLayer2"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="."]
+offset = Vector2( -960, 0 )
+transform = Transform2D( 1, 0, 0, 1, -960, 0 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground4"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 250
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground4/ParallaxLayer3"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="ParallaxBackground5" type="ParallaxBackground" parent="."]
+offset = Vector2( -960, 270 )
+transform = Transform2D( 1, 0, 0, 1, -960, 270 )
+scroll_base_scale = Vector2( 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground5"]
+script = ExtResource( 3 )
+offSet = 10
+
+[node name="Wall" type="Sprite" parent="ParallaxBackground5/ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 960, 270 )
+
+[node name="ParallaxBackground6" type="ParallaxBackground" parent="."]
+offset = Vector2( -960, 270 )
+transform = Transform2D( 1, 0, 0, 1, -960, 270 )
+scroll_base_scale = Vector2( 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground6"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 100
+
+[node name="Train Cargo Car Clouds in Back" type="Sprite" parent="ParallaxBackground6/ParallaxLayer"]
+position = Vector2( 0, 34.4611 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxBackground7" type="ParallaxBackground" parent="."]
+offset = Vector2( -960, 270 )
+transform = Transform2D( 1, 0, 0, 1, -960, 270 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground7"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 200
+
+[node name="Train Cargo Car Front Pipes" type="Sprite" parent="ParallaxBackground7/ParallaxLayer2"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxBackground8" type="ParallaxBackground" parent="."]
+offset = Vector2( -960, 270 )
+transform = Transform2D( 1, 0, 0, 1, -960, 270 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground8"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 250
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground8/ParallaxLayer3"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="ParallaxBackground9" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground9"]
+script = ExtResource( 3 )
+offSet = 10
+
+[node name="Wall" type="Sprite" parent="ParallaxBackground9/ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 960, 270 )
+
+[node name="ParallaxBackground10" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground10"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 100
+
+[node name="Train Cargo Car Clouds in Back" type="Sprite" parent="ParallaxBackground10/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxBackground11" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground11"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 200
+
+[node name="Train Cargo Car Front Pipes" type="Sprite" parent="ParallaxBackground11/ParallaxLayer2"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxBackground12" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground12"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 250
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground12/ParallaxLayer3"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="ParallaxBackground13" type="ParallaxBackground" parent="."]
+offset = Vector2( 0, 270 )
+transform = Transform2D( 1, 0, 0, 1, 0, 270 )
+scroll_base_scale = Vector2( 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground13"]
+script = ExtResource( 3 )
+offSet = 10
+
+[node name="Wall" type="Sprite" parent="ParallaxBackground13/ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 960, 270 )
+
+[node name="ParallaxBackground14" type="ParallaxBackground" parent="."]
+offset = Vector2( 0, 270 )
+transform = Transform2D( 1, 0, 0, 1, 0, 270 )
+scroll_base_scale = Vector2( 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground14"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 100
+
+[node name="Train Cargo Car Clouds in Back" type="Sprite" parent="ParallaxBackground14/ParallaxLayer"]
+position = Vector2( 0, 34.4611 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxBackground15" type="ParallaxBackground" parent="."]
+offset = Vector2( 0, 270 )
+transform = Transform2D( 1, 0, 0, 1, 0, 270 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground15"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 200
+
+[node name="Train Cargo Car Front Pipes" type="Sprite" parent="ParallaxBackground15/ParallaxLayer2"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxBackground16" type="ParallaxBackground" parent="."]
+offset = Vector2( 0, 270 )
+transform = Transform2D( 1, 0, 0, 1, 0, 270 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground16"]
+motion_mirroring = Vector2( 480, 0 )
+script = ExtResource( 3 )
+offSet = 250
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground16/ParallaxLayer3"]
+texture = ExtResource( 7 )
+centered = false

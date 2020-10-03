@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/424940__blukotek__heavy-machine-steam-pressure-gauge.wav-f40aa91a780caf64d91294e2440f675f.sample"
+
+[deps]
+
+source_file="res://Sound Effects/424940__blukotek__heavy-machine-steam-pressure-gauge.wav"
+dest_files=[ "res://.import/424940__blukotek__heavy-machine-steam-pressure-gauge.wav-f40aa91a780caf64d91294e2440f675f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

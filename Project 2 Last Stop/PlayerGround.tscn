@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Michael's Environment Sprites/Train Cargo Car Player Ground.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 235.798, 6.06097 )
+
+[node name="PlayerGround" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="PlayerGround" type="Sprite" parent="Floor"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 241.547, 266.125 )
+shape = SubResource( 1 )

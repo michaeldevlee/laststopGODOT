@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Train Sound Effect-001.wav-0b8e751785ae2d2cbd15f1940b457a39.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Train Sound Effect-001.wav"
+dest_files=[ "res://.import/Train Sound Effect-001.wav-0b8e751785ae2d2cbd15f1940b457a39.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
